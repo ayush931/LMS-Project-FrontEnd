@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 
 import axiosInstance from "../../Helpers/axiosInstance"
+
 const initialState = {
     isLoggedIn: localStorage.getItem('isLoggedIn') || false,
     role: localStorage.getItem('role') || "",
@@ -42,13 +43,13 @@ export const login = createAsyncThunk("/auth/login", async (data) => {
 
 export const logout = createAsyncThunk("/auth/logout", async () => {
     try {
-        const res = axiosInstance.post("user/logout");
+        const res = axiosInstance.post("user/logout")
         toast.promise(res, {
             loading: "Wait! logout in progress...",
             success: (data) => {
                 return data?.data?.message;
             },
-            error: "Failed to logout"
+            error: "Failed to log out"
         });
         return (await res).data;
     } catch(error) {
