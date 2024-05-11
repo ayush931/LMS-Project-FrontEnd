@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { isEmail, isValidPassword } from '../Helpers/regexMatcher';
-import HomeLayout from '../layouts/HomeLayout';
+import HomeLayout from '../Layouts/HomeLayout';
 import { createAccount } from '../Redux/Slices/AuthSlice';
 
 function Signup() {
@@ -13,7 +13,7 @@ function Signup() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-
+    
     const [previewImage, setPreviewImage] = useState("");
 
     const [signupData, setSignupData] = useState({

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import CourseCard from "../../components/CourseCard";
-import HomeLayout from "../../layouts/HomeLayout";
+import CourseCard from "../../Components/CourseCard";
+import HomeLayout from "../../Layouts/HomeLayout";
 import { getAllCourses } from "../../Redux/Slices/CourseSlice";
 
 function CourseList() {
@@ -32,7 +32,7 @@ function CourseList() {
                         return <CourseCard key={element._id} data={element} />
                     })}
                 </div>
-
+                
 
             </div>
         </HomeLayout>
